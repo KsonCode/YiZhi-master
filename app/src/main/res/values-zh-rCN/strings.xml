@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">币圈</string>
+
+    <string name="zhihu_detail_title">币圈日报</string>
+    <string name="wangyi_detail_title">热点新闻</string>
+    <string name="weixin_detail_title">微信精选</string>
+</resources>

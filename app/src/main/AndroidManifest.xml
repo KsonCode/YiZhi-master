@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.zyw.horrarndoo.yizhi">
+
+    <application
+        android:name=".global.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data android:value="5aa509778f4a9d19130001c0" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="${UMENG_CHANNEL_VALUE}" android:name="UMENG_CHANNEL"/>
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity
+            android:name=".ui.activity.FlashActivity"
+            android:theme="@style/FlashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.activity.detail.ZhihuDailyDetailActivity"/>
+
+        <activity android:name=".ui.activity.detail.WangyiDailyDetailActivity"/>
+
+        <activity android:name=".ui.activity.detail.WeixinChoiceDetailActivity"/>
+
+        <activity android:name=".ui.activity.detail.GankIoDetailActivity"/>
+
+        <activity android:name=".ui.activity.detail.MovieDetailActivity"/>
+
+        <activity android:name=".ui.activity.detail.BookDetailActivity"/>
+
+        <activity android:name=".ui.activity.detail.WebViewLoadActivity"/>
+
+        <activity android:name=".ui.activity.QRCodeActivity"/>
+
+        <activity android:name=".ui.activity.AboutActivity"/>
+
+        <activity android:name=".ui.activity.personal.HeadSettingActivity"/>
+
+        <activity android:name=".ui.activity.pic.ImageBrowseActivity"/>
+
+        <activity android:name=".ui.activity.MainActivity"/>
+
+        <!--ShareSdk-->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+            <!--集成line客户端登录授权，需要添如下格式的过滤器-->
+            <intent-filter>
+                <data android:scheme="line.1477692153"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter><action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="tencent100371282"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="21d3af87a470e"/>
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="4fce6d9209421372b1584bc19ceca006"/>
+    </application>
+
+</manifest>
