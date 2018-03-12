@@ -85,6 +85,7 @@ public class MainActivity extends BaseCompatActivity implements HomeFragment
         super.onDestroy();
         //        Logger.e("RxBus.get().unRegister(this)");
         RxBus.get().unRegister(this);
+        //修改destroy
     }
 
     @Override
